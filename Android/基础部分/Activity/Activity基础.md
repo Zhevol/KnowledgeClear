@@ -18,7 +18,7 @@
    - `onStart()` 和 `onStop()` 循环：Activity 的**可见生命周期**发生在这两者的调用之间。在此期间用户可以在屏幕上看到此 Activity 并与其交互。
    - `onResume()` 和 `onPause()` 循环：Activity 的**前台生命周期**发生在这两者的调用之间。在此期间，此 Activity 显示在屏幕上并具有焦点。
 
-   各个生命周期的回调方法汇总信息表：
+   各个生命周期的回调方法汇总信息表（此表来自[官方文档](https://developer.android.google.cn/guide/components/activities.html#ImplementingLifecycleCallbacks)）：
 
    <table>
        <tr>
@@ -70,3 +70,13 @@
              <td>无</td>
        </tr>
    </table>
+
+### 2、常见的生命周期调用
+
+- 打开一个新的 Activity 实例：`onCreate() -> onStart() -> onResume()`；
+- 在本 Activity 打开新的 Activity 实例：本 Activity `onPause() -> onStop()`，新的 Activity `onCreate() -> onStart() -> onResume()`；
+- 在本 Activity 返回到之前的 Activity 实例：本 Activity `onPause() -> onStop() -> onDestroy()`，之前的 Activity `onRestart() -> onStart() -> onResume()`；
+- Activity 处于后台，且后台且系统内存不足的情况下系统会杀死后台状态的 Activity，若再次回到这个 Activity，生命周期流程：`onCreate() -> onStart() -> onResume()`；
+- 锁定屏幕与解锁屏幕的生命周期：锁屏 `onPause()`，解锁 `onResume()`；
+- 按 Home 键：`onPause() -> onStop()`；
+- 横竖屏切换的生命周期：1.在 Manifest 未配置 configChanges 属性：重新调用各生命周期，横屏一次，竖屏两次；2.配置 configChanges 为 orientation 时，切屏仍然调用各生命周期，但都只会调用一次；3.在，Android 4.0 以前配置 configChanges 属性为 orientation|keyboardHidden ，4.0 以后配置为 orientation|keyboardHidden|screenSize，只会执行 `onConfigurationChanged()` 方法。
