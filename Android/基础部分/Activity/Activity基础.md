@@ -28,10 +28,10 @@
          <th colspan="1"><h4>后接</h4></th>
        </tr>
        <tr>
-             <td><code>onCreate()</code></td>
-             <td><code>首次创建 Activity 时调用。 您应该在此方法中执行所有正常的静态设置 — 创建视图、将数据绑定到列表等等。 系统向此方法传递一个 Bundle 对象，其中包含 Activity 的上一状态，不过前提是捕获了该状态。<br/>始终后接 onStart()。</code></p></td>
-             <td><code>否</code></td>
-             <td><code>onStart()</code></td>
+             <td>onCreate()</td>
+             <td>首次创建 Activity 时调用。 您应该在此方法中执行所有正常的静态设置 — 创建视图、将数据绑定到列表等等。 系统向此方法传递一个 Bundle 对象，其中包含 Activity 的上一状态，不过前提是捕获了该状态。<br/>始终后接 onStart()。</td>
+             <td>否</td>
+             <td>onStart()</td>
        </tr>
 
    </table>
