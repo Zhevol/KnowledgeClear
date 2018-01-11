@@ -5,7 +5,7 @@
 　　BRVAH 是 BaseRecyclerViewAdapterHelper 的简称，它是针对于 RecyclerView 的内容适配器的一个开源框架。作为一个开发者，在使用的过程中能真实的体会到这个框架的强大。同时，阅读及解析这个框架，能够更有利于以后在开发中使用这个框架，进而提高自己的分析能力。对于其中包含的一些设计和操作的思想，做一个汲取和整理，有利于个人的进步。
 
 　　If I have seen further,it is by standing on the shoulders of giants.　　——Isaac Newton
-　　
+
 　　如果说我比别人看得更远，那是因为我站在巨人的肩膀上。　　——牛顿
 
 #### 二、 BRVAH 的包结构
